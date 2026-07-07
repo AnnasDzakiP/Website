@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FCF9F2; /* Warm soft cream background */
+  --foreground: #1C1917; /* Slate charcoal */
+}
+
+@theme {
+  --color-brand-yellow: #F59E0B;
+  --color-brand-brown: #78350F;
+  --color-brand-cream: #FEF3C7;
+  --color-brand-cream-light: #FFFDEE;
+  --color-brand-charcoal: #2D2722;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+

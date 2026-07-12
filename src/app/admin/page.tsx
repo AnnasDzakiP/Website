@@ -12,29 +12,26 @@ import DashboardStats from "../../components/admin/DashboardStats";
 
 export default function AdminDashboardPage() {
   // 1. STATE GLOBAL APLIKASI ADMIN
-  // Menentukan tab mana yang sedang aktif
   const [activeTab, setActiveTab] = useState<"orders" | "menu" | "reports">(
     "orders",
   );
-
-  // Mengatur status sidebar (buka/tutup) untuk tampilan HP (Mobile)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(true); // Tambahan untuk status loading
+  const [loading, setLoading] = useState(true); // Tambahkan state loading
 
   const router = useRouter();
   const supabase = createClient();
 
-  // Proteksi Halaman: Cek apakah user sudah login
+  // Proteksi Auth: Cek sesi setiap kali halaman dimuat
   useEffect(() => {
-    const checkUser = async () => {
+    const checkAuth = async () => {
       const { data } = await supabase.auth.getSession();
       if (!data.session) {
         router.push("/admin/login");
       } else {
-        setIsLoading(false); // Berhenti loading jika sudah login
+        setLoading(false); // Sesi ditemukan, tampilkan konten
       }
     };
-    checkUser();
+    checkAuth();
   }, [router, supabase]);
 
   // Fungsi logout yang sudah dihubungkan ke Supabase Auth
@@ -43,11 +40,11 @@ export default function AdminDashboardPage() {
     router.push("/admin/login");
   };
 
-  // Tampilkan loading sebentar sebelum merender dashboard
-  if (isLoading) {
+  // Jika sedang mengecek sesi, tampilkan loading/kosong agar tidak terlihat flicker
+  if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        Memverifikasi akses...
+        Memuat...
       </div>
     );
   }

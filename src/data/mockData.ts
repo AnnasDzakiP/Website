@@ -1,86 +1,94 @@
-import { MenuItem, ToppingOption } from '../types';
+import { MenuItem, ToppingOption } from "../types";
 
 export const MOCK_TOPPING_OPTIONS: ToppingOption[] = [
-    { id: 't1', name: 'Keju Kraft Cheddar Parut', price: 3000 },
-    { id: 't2', name: 'Meses Cokelat Classic', price: 2000 },
-    { id: 't3', name: 'Krim Cocopandan Lumer', price: 3000 },
-    { id: 't4', name: 'Matches Oreo Crumbs', price: 2500 },
-    { id: 't5', name: 'Kacang Tanah Sangrai', price: 2000 },
-    { id: 't6', name: 'Susu Kental Manis Premium', price: 1500 },
-    { id: 't7', name: 'Choco Chip Crunchy', price: 2500 },
+  { id: "t1", name: "Keju Kraft Cheddar Parut", price: 3000 },
+  { id: "t2", name: "Meses Cokelat Classic", price: 2000 },
+  { id: "t3", name: "Krim Cocopandan Lumer", price: 3000 },
+  { id: "t4", name: "Matches Oreo Crumbs", price: 2500 },
+  { id: "t5", name: "Kacang Tanah Sangrai", price: 2000 },
+  { id: "t6", name: "Susu Kental Manis Premium", price: 1500 },
+  { id: "t7", name: "Choco Chip Crunchy", price: 2500 },
 ];
 
 export const MOCK_MENU_ITEMS: MenuItem[] = [
-    {
-        id: 'm1',
-        name: 'Pancong Choco Lava Premium',
-        description: 'Adonan lembut legendaris dengan isian cokelat Belgia lumer melimpah di tengahnya. Sangat nikmat disajikan hangat.',
-        price: 15000,
-        image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
-        category: 'sweet',
-        isAvailable: true,
-    },
-    {
-        id: 'm2',
-        name: 'Pancong Cheese Melt Special',
-        description: 'Gurih tebal keju quick melt di atas adonan hangat yang lumer di mulut. Kombinasi manis gurih yang pas.',
-        price: 16000,
-        image: 'https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
-        category: 'sweet',
-        isAvailable: true,
-    },
-    {
-        id: 'm3',
-        name: 'Pancong Tiramisu Almond Crunchy',
-        description: 'Saus tiramisu harum dengan taburan irisan kacang almond panggang yang super renyah.',
-        price: 17500,
-        image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
-        category: 'sweet',
-        isAvailable: true,
-    },
-    {
-        id: 'm4',
-        name: 'Pancong Matcha Green Tea Lumer',
-        description: 'Saus matcha premium khas Jepang dengan cita rasa aromatik, manis lembut, dan meleleh sempurna.',
-        price: 16500,
-        image: 'https://images.unsplash.com/photo-1536680465769-2365207b035e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
-        category: 'sweet',
-        isAvailable: true,
-    },
-    {
-        id: 'm5',
-        name: 'Pancong Classic Original Susu',
-        description: 'Rasa autentik original pancong tradisional bertaburkan gula pasir halus dan kucuran susu kental manis.',
-        price: 12000,
-        image: 'https://images.unsplash.com/photo-1587314168485-3236d6710814?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
-        category: 'sweet',
-        isAvailable: true,
-    },
-    {
-        id: 'm6',
-        name: 'Pancong Smoke Beef Mozzarella',
-        description: 'Adonan gurih dengan potongan daging sapi asap (smoke beef) premium dan lelehan keju mozzarella yang molor.',
-        price: 22000,
-        image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
-        category: 'savory',
-        isAvailable: true,
-    },
-    {
-        id: 'm7',
-        name: 'Pancong Salted Egg & Chicken Floss',
-        description: 'Saus telur asin gurih melimpah dikombinasikan dengan taburan abon ayam berkualitas di atasnya.',
-        price: 20000,
-        image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
-        category: 'savory',
-        isAvailable: true,
-    },
-    {
-        id: 'm8',
-        name: 'Pancong Spicy Garlic Cheese',
-        description: 'Saus keju gurih dengan bumbu cabai pedas beraroma bawang putih panggang yang harum menggoda.',
-        price: 19000,
-        image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
-        category: 'savory',
-        isAvailable: false, // out of stock to demonstrate availability flags
-    },
+  {
+    id: "m1",
+    name: "Pancong Choco Lava Premium",
+    description:
+      "Adonan lembut legendaris dengan isian cokelat Belgia lumer melimpah di tengahnya. Sangat nikmat disajikan hangat.",
+    price: 15000,
+    image:
+      "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    isAvailable: true,
+  },
+  {
+    id: "m2",
+    name: "Pancong Cheese Melt Special",
+    description:
+      "Gurih tebal keju quick melt di atas adonan hangat yang lumer di mulut. Kombinasi manis gurih yang pas.",
+    price: 16000,
+    image:
+      "https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    isAvailable: true,
+  },
+  {
+    id: "m3",
+    name: "Pancong Tiramisu Almond Crunchy",
+    description:
+      "Saus tiramisu harum dengan taburan irisan kacang almond panggang yang super renyah.",
+    price: 17500,
+    image:
+      "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    isAvailable: true,
+  },
+  {
+    id: "m4",
+    name: "Pancong Matcha Green Tea Lumer",
+    description:
+      "Saus matcha premium khas Jepang dengan cita rasa aromatik, manis lembut, dan meleleh sempurna.",
+    price: 16500,
+    image:
+      "https://images.unsplash.com/photo-1536680465769-2365207b035e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    isAvailable: true,
+  },
+  {
+    id: "m5",
+    name: "Pancong Classic Original Susu",
+    description:
+      "Rasa autentik original pancong tradisional bertaburkan gula pasir halus dan kucuran susu kental manis.",
+    price: 12000,
+    image:
+      "https://images.unsplash.com/photo-1587314168485-3236d6710814?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    isAvailable: true,
+  },
+  {
+    id: "m6",
+    name: "Pancong Smoke Beef Mozzarella",
+    description:
+      "Adonan gurih dengan potongan daging sapi asap (smoke beef) premium dan lelehan keju mozzarella yang molor.",
+    price: 22000,
+    image:
+      "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    isAvailable: true,
+  },
+  {
+    id: "m7",
+    name: "Pancong Salted Egg & Chicken Floss",
+    description:
+      "Saus telur asin gurih melimpah dikombinasikan dengan taburan abon ayam berkualitas di atasnya.",
+    price: 20000,
+    image:
+      "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    isAvailable: true,
+  },
+  {
+    id: "m8",
+    name: "Pancong Spicy Garlic Cheese",
+    description:
+      "Saus keju gurih dengan bumbu cabai pedas beraroma bawang putih panggang yang harum menggoda.",
+    price: 19000,
+    image:
+      "https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+    isAvailable: false,
+  },
 ];

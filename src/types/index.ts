@@ -4,11 +4,10 @@ export interface MenuItem {
   description: string;
   price: number;
   image: string; // url or placeholder
-  category: 'sweet' | 'savory';
   isAvailable: boolean;
 }
 
-export type VariantType = 'Setengah Matang' | 'Matang';
+export type VariantType = "Setengah Matang" | "Matang";
 
 export interface ToppingOption {
   id: string;
@@ -27,7 +26,7 @@ export interface OrderDetails {
 }
 
 export interface PaymentDetails {
-  method: 'QRIS' | 'Cash';
+  method: "QRIS" | "Cash";
   grandTotal: number;
   uploadedReceipt: File | null;
   uploadedReceiptUrl?: string;

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "../../utils/supabase/client";
 
@@ -19,15 +19,38 @@ export default function AdminDashboardPage() {
 
   // Mengatur status sidebar (buka/tutup) untuk tampilan HP (Mobile)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // Tambahan untuk status loading
 
   const router = useRouter();
   const supabase = createClient();
+
+  // Proteksi Halaman: Cek apakah user sudah login
+  useEffect(() => {
+    const checkUser = async () => {
+      const { data } = await supabase.auth.getSession();
+      if (!data.session) {
+        router.push("/admin/login");
+      } else {
+        setIsLoading(false); // Berhenti loading jika sudah login
+      }
+    };
+    checkUser();
+  }, [router, supabase]);
 
   // Fungsi logout yang sudah dihubungkan ke Supabase Auth
   const handleLogout = async () => {
     await supabase.auth.signOut();
     router.push("/admin/login");
   };
+
+  // Tampilkan loading sebentar sebelum merender dashboard
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        Memverifikasi akses...
+      </div>
+    );
+  }
 
   // 2. RENDER DASHBOARD (Menggunakan Return di dalam Fungsi)
   return (
